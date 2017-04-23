@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- Title Bar -->
+    <include layout="@layout/title_bar"/>
+
+    <!-- FrameLayout -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/fl_main"
+        />
+
+
+    <!-- RadioGroup 底部导航栏 -->
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="3dp"
+        android:id="@+id/rg_bottom"
+        >
+
+        <RadioButton
+            android:id="@+id/rb_wechat"
+            android:text="微信"
+            android:drawableTop="@drawable/rb_chat_drawable_selector"
+            style="@style/bottom_text_style"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_contact"
+            android:text="通讯录"
+            android:drawableTop="@drawable/rb_contact_drawable_selector"
+            style="@style/bottom_text_style"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_discover"
+            android:text="发现"
+            android:drawableTop="@drawable/rb_discover_drawable_selector"
+            style="@style/bottom_text_style"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_about_me"
+            android:text="我"
+            android:drawableTop="@drawable/rb_about_me_drawable_selector"
+            style="@style/bottom_text_style"
+            />
+
+    </RadioGroup>
+
+</LinearLayout>
