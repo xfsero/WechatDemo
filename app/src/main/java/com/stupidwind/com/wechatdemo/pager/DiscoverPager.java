@@ -12,6 +12,10 @@ import com.stupidwind.com.wechatdemo.base.BasePager;
  * Created by 蠢风 on 2017/4/21.
  */
 
+
+/**
+ *  发现页面
+ */
 public class DiscoverPager extends BasePager {
 
     private static final String TAG = DiscoverPager.class.getSimpleName();
@@ -25,7 +29,7 @@ public class DiscoverPager extends BasePager {
     @Override
     public View initView() {
         tv_content = new TextView(mContext);
-        tv_content.setTextSize(28);
+        tv_content.setTextSize(24);
         tv_content.setGravity(Gravity.CENTER);
         return tv_content;
     }

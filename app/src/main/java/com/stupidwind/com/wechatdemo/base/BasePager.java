@@ -7,6 +7,9 @@ import android.view.View;
  * Created by 蠢风 on 2017/4/21.
  */
 
+/**
+ *  页面抽象类
+ */
 public abstract class BasePager {
 
     public Context mContext;
@@ -20,8 +23,10 @@ public abstract class BasePager {
         rootView = initView();
     }
 
+    //初始化视图，子页面实现该方法
     public abstract View initView();
 
+    //初始化数据，子页面实现该方法
     public abstract void initData();
 
 }

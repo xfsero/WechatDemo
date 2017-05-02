@@ -12,6 +12,9 @@ import com.stupidwind.com.wechatdemo.base.BasePager;
  * Created by 蠢风 on 2017/4/21.
  */
 
+/**
+ *  通讯录页面
+ */
 public class ContactPager extends BasePager {
 
     private static final String TAG = ContactPager.class.getSimpleName();
@@ -25,7 +28,7 @@ public class ContactPager extends BasePager {
     @Override
     public View initView() {
         tv_content = new TextView(mContext);
-        tv_content.setTextSize(28);
+        tv_content.setTextSize(24);
         tv_content.setGravity(Gravity.CENTER);
         return tv_content;
     }

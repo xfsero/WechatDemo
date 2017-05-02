@@ -30,6 +30,7 @@ public class LaunchActivity extends Activity {
             @Override
             public void run() {
                 if(!isStartMain) {
+                    isStartMain = true;
                     Log.d(TAG, "当前线程 = " + Thread.currentThread().getName());
                     Intent intent = new Intent(LaunchActivity.this, MainActivity.class);
                     startActivity(intent);
@@ -37,11 +38,11 @@ public class LaunchActivity extends Activity {
                 }
             }
         }, 2500);
-
     }
 
     @Override
     protected void onDestroy() {
+        //切换到主页面时，移除所有消息和回调
         handler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }

@@ -21,6 +21,9 @@ import com.stupidwind.com.wechatdemo.pager.WechatPager;
 
 import java.util.ArrayList;
 
+/**
+ * 主界面Activity
+ */
 public class MainActivity extends Activity {
 
     private ArrayList<BasePager> pagers;
@@ -29,7 +32,7 @@ public class MainActivity extends Activity {
 
     private TextView titleBarText;
 
-    private String[] titleBarTexts = {"微信", "通讯录", "发现", "我"};
+    private static final String[] titleBarTexts = {"微信", "通讯录", "发现", "我"};
 
     private int position;
 
@@ -38,7 +41,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         rg_bottom = (RadioGroup) findViewById(R.id.rg_bottom);
         titleBarText = (TextView) findViewById(R.id.title_bar_text);
 
@@ -46,7 +48,7 @@ public class MainActivity extends Activity {
         pagers.add(new WechatPager(this));      //添加微信页面
         pagers.add(new ContactPager(this));     //添加通讯录页面
         pagers.add(new DiscoverPager(this));    //添加发现页面
-        pagers.add(new AboutMePager(this));          //添加我页面
+        pagers.add(new AboutMePager(this));     //添加我页面
 
         rg_bottom.setOnCheckedChangeListener(new MyOnCheckedChangeListener());
         rg_bottom.check(R.id.rb_wechat);
@@ -56,19 +58,19 @@ public class MainActivity extends Activity {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId) {
-                case R.id.rb_wechat:
+                case R.id.rb_wechat:    //微信页面
                     position = 0;
                     break;
 
-                case R.id.rb_contact:
+                case R.id.rb_contact:   //通讯录页面
                     position = 1;
                     break;
 
-                case R.id.rb_discover:
+                case R.id.rb_discover:  //发现页面
                     position = 2;
                     break;
 
-                case R.id.rb_about_me:
+                case R.id.rb_about_me:  //我页面
                     position = 3;
                     break;
 
@@ -80,6 +82,9 @@ public class MainActivity extends Activity {
         }
     }
 
+    /**
+     * 获取相应的Fragment
+     */
     private void getFragment() {
         //获取FragmentManager
         FragmentManager manager = getFragmentManager();
@@ -106,7 +111,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * 根据position获取对应的页面
+     * 根据position获取对应的Pager
      * @return
      */
     private BasePager getBasePager() {
